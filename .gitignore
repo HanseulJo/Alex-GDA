@@ -1,0 +1,3 @@
+# gan/data/*
+gan/logs/*
+gan/_cache_*

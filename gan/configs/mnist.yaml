@@ -1,0 +1,61 @@
+# random seed
+seed: 999
+
+# Root directory for dataset
+dataroot: "data/mnist"
+
+# Number of workers for dataloader
+workers: 0
+
+# Batch size during training
+batch_size: 128
+batch_size_eval: 1000
+
+# Spatial size of training images. All images will be resized to this
+#   size using a transformer.
+image_size: 32
+
+# Number of channels in the training images. For color images this is 3
+nc: 1
+
+# Size of z latent vector (i.e. size of generator input)
+nz: 128
+
+# Size of feature maps in generator
+ngf: 64
+
+# Size of feature maps in discriminator
+ndf: 64
+
+# Number of training epochs
+num_epochs: 200
+
+# Config for Adam optimizers
+optimizer:
+  # Generator
+  G:
+    type: Adam
+    # Learning rate for optimizers
+    lr: 0.0002
+    # Beta hyperparameter for Adam optimizers
+    betas: [0., 0.99]
+  # Discriminator
+  D:
+    type: Adam
+    # Learning rate for optimizers
+    lr: 0.0002
+    # Beta hyperparameter for Adam optimizers
+    betas: [0., 0.99]
+
+# GPUs available. Empty list for cpu mode.
+gpus: [4]
+
+
+# Algorithm: Sim-GDA, Alt-GDA, Alt-GDA+
+# algorithm: Alt-GDA
+
+# Hyperparameter for Alt-GDA+. 0 for Sim-GDA. 1 for Alt-GDA.
+gamma: 1.
+
+# Hyperparameter for Alt-GDA++.  1 for Sim-GDA. 1 for Alt-GDA.
+delta: 1.
